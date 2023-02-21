@@ -23,6 +23,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function canAccessFilament(): bool
+    {
+        return str_ends_with($this->email, '@gmail.com') && $this->hasVerifiedEmail();
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
