@@ -25,7 +25,7 @@ class User extends Authenticatable
 
     public function canAccessFilament(): bool
     {
-        return str_ends_with($this->email, '@gmail.com') && $this->hasVerifiedEmail();
+        return str_ends_with($this->email, '@gmail.com');
     }
     /**
      * The attributes that should be hidden for serialization.
